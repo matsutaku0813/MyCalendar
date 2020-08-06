@@ -1,5 +1,5 @@
 body{
-  font-family: 'Courier New', monospace;
+  font-family:'OCRB';
   font-size: 14px;
 }
 
@@ -38,4 +38,15 @@ td.today{
 #prev,#next,#today{
   cursor: pointer;
   user-select: none;
+}
+
+.sat{
+  color: blue;
+}
+.sun{
+  color: red;
+}
+#display{
+  font-size: 20px;
+  font-family: 'OCRB';
 }

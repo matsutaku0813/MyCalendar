@@ -119,12 +119,31 @@ console.clear();
     createCalendar();
   });
 
-  document.getElementById('today').addEventListener('click',()=>{
-    year=today.getFullYear();
-    month=today.getMonth();
+  document.getElementById('today').addEventListener('click', () => {
+    year = today.getFullYear();
+    month = today.getMonth();
 
     createCalendar();
   });
 
   createCalendar();
+}
+
+setInterval('clock()', 500);
+
+function clock() {
+  document.getElementById("display").innerHTML = getNow();
+}
+
+function getNow() {
+  var now = new Date();
+  var year = now.getFullYear();
+  var mon = ("0" + (now.getMonth() + 1)).slice(-2);
+  var day = ("0" + now.getDate()).slice(-2);
+  var hour = ("0" + now.getHours()).slice(-2);
+  var min = ("0" + now.getMinutes()).slice(-2);
+  var sec = ("0" + now.getSeconds()).slice(-2);
+
+  var s = `${year}年${mon}月${day}日${hour}時${min}分${sec}秒`;
+  return s;
 }
